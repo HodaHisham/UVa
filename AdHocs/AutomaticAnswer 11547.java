@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.*;
-public class AutomaticAnswer {
+
+public class AutomaticAnswer 11547 {
  public static void main(String[]args)throws java.lang.Exception{
     BufferedReader bf  = new BufferedReader(new InputStreamReader(System.in));
     StringTokenizer s1= new StringTokenizer(bf.readLine());

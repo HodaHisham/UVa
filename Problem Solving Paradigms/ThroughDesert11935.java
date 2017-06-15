@@ -1,7 +1,7 @@
 package acm;
 import java.io.*;
 import java.util.*;
-public class throughDesert {
+public class ThroughDesert11935 {
 	static double EPS = 1e-12;
 	static ArrayList<Integer> dist;
 	static ArrayList<Integer> consum;

@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class CelebrityJeopardy {
+public class CelebrityJeopardy1124 {
   public static void main(String[]args)throws java.lang.Exception{
     BufferedReader bf  = new BufferedReader(new InputStreamReader(System.in));
     String str;

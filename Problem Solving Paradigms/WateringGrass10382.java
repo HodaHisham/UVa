@@ -1,7 +1,7 @@
 package acm;
 import java.io.*;
 import java.util.*;
-class Ideone {
+class WateringGrass10382 {
 	static final double EPS = 1e-7;
 	public static void main(String[] args) throws Exception {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));

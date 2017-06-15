@@ -1,7 +1,7 @@
 package acm;
 import java.io.*;
 import java.util.*;
-public class perfectHash {
+public class PerfectHash188  {
    
    public static void main(String[] args) throws Exception {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));

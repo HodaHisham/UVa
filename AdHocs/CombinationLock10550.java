@@ -8,7 +8,7 @@
 
 import java.io.*;
 import java.util.*;
-public class CombinationLock {
+public class CombinationLock10550 {
   public static void main(String[]args)throws java.lang.Exception{
     BufferedReader bf  = new BufferedReader(new InputStreamReader(System.in));
     String str;

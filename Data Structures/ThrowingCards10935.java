@@ -1,7 +1,7 @@
 package acm;
 import java.io.*;
 import java.util.*;
-public class throwingCards {
+public class ThrowingCards10935 {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));

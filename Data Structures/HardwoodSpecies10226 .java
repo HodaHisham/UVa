@@ -3,7 +3,7 @@ import java.awt.datatransfer.SystemFlavorMap;
 import java.io.*;
 import java.util.*;
   
-public class hardwoodSpecies {
+public class HardwoodSpecies10226 {
   
 	public static void main(String[] args) throws java.lang.Exception{
     	BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));

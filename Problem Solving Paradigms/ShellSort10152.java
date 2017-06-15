@@ -1,7 +1,7 @@
 package Ch4;
 import java.io.*; 
 import java.util.*;
-public class shellSort {
+public class ShellSort10152 {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));

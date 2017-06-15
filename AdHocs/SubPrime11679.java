@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class subPrime {
+public class SubPrime11679 {
    public static void main(String[]args)throws java.lang.Exception{
     BufferedReader bf  = new BufferedReader(new InputStreamReader(System.in));
     StringTokenizer st= new StringTokenizer(bf.readLine());

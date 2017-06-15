@@ -1,7 +1,7 @@
 package acm;
 import java.io.*;
 import java.util.*;
-class Main {
+class HanoiTroubles10276 {
     static int[] a;
     public static boolean canPlace(int i ,int x){
     	if(i== a.length)

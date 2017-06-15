@@ -1,7 +1,7 @@
 package acm;
 import java.io.*;
 import java.util.*;
-public class shortStory {
+public class ShortStory12482 {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));

@@ -1,7 +1,7 @@
 package acm;
 import java.io.*;
 import java.util.*;
-public class Ants {
+public class Ants10714 {
 
 	public static void main(String[] args) throws Exception {
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));

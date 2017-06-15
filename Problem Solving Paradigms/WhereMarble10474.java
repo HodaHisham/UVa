@@ -1,7 +1,7 @@
 package acm;
 import java.io.*;
 import java.util.*;
-public class whereMarble {
+public class WhereMarble10474 {
 	public static int binaryS(int [] a, int d){
 		int ind = -1;
 		int low= 0, high = a.length-1, mid = low+high/2;

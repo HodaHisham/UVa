@@ -2,7 +2,7 @@
 
 import java.io.*;
 import java.util.*;
-public class SaveSetu {
+public class SaveSetu12403 {
  public static void main(String[]args)throws java.lang.Exception{
     BufferedReader bf  = new BufferedReader(new InputStreamReader(System.in));
     StringTokenizer s1= new StringTokenizer(bf.readLine());

@@ -1,7 +1,7 @@
 package acm;
 import java.io.*;
 import java.util.*;
-public class back8Queens {
+public class Back8Queens11085 {
   static int[]rows;
   static int [] input;
   static int minI;

@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class EcologicalPremium {
+public class EcologicalPremium10300  {
  public static void main(String[]args)throws java.lang.Exception{
     BufferedReader bf  = new BufferedReader(new InputStreamReader(System.in));
     StringTokenizer s1= new StringTokenizer(bf.readLine());

@@ -1,7 +1,7 @@
 package acm;
 import java.io.*;
 import java.util.*;
-public class y2kAccounting {
+public class Y2kAccounting10576 {
 	static int ans;
     static boolean possible;
 	static int[]earn;

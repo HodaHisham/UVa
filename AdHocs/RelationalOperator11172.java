@@ -1,6 +1,6 @@
 import java.io.*;
 import java.lang.*;
-public class p8 {
+public class RelationalOperator11172 {
      public static void main(String[] args) throws java.lang.Exception{
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         int x = Integer.parseInt(bf.readLine());

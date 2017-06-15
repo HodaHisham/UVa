@@ -2,7 +2,7 @@ package acm;
 import java.io.*;
 import java.util.*;
 
-public class settlerCatan {
+public class SettlerCatan539 {
 	static int[][] arr ;
 	static int maxLength;
 	public static void dfs(){

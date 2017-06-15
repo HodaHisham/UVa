@@ -8,7 +8,7 @@
 
 import java.io.*;
 import java.util.*;
-public class Parking {
+public class Parking11364 {
  public static void main(String[]args)throws java.lang.Exception{
     BufferedReader bf  = new BufferedReader(new InputStreamReader(System.in));
     StringTokenizer s1= new StringTokenizer(bf.readLine());

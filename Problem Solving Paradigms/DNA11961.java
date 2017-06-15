@@ -1,7 +1,7 @@
 package acm;
 import java.io.*;
 import java.util.*;
-public class DNA {
+public class DNA11961 {
    static char[] c= {'A','C','G','T'};
    static char [] s ;
    static int n;
