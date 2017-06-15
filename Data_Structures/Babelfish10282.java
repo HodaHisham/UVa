@@ -1,0 +1,77 @@
+package DataStructures;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.StringTokenizer;
+
+public class Babelfish10282 {
+
+    public static void main(String[] args) throws Exception
+    {
+	Scanner bf = new Scanner(System.in);
+	PrintWriter out = new PrintWriter(System.out);
+	HashMap<String, String> map = new HashMap<>();
+	String s = "";
+	while(!(s = bf.nextLine()).isEmpty()){
+	    StringTokenizer st = new StringTokenizer(s);
+	    String tmp = st.nextToken(), tmp2 = st.nextToken();
+	    map.put(tmp2, tmp);
+	}
+	while(bf.ready()){
+	    String inp = bf.next();
+	    String tmp = map.get(inp);
+	    if(tmp == null)
+		tmp = "eh";
+	    out.println(tmp);
+	}
+	out.flush();
+	out.close();
+    }
+
+    static class Scanner {
+	StringTokenizer st;
+	BufferedReader br;
+
+	public Scanner(InputStream s)
+	{
+	    br = new BufferedReader(new InputStreamReader(s));
+	}
+
+	public Scanner(FileReader fileReader)
+	{
+	    br = new BufferedReader(fileReader);
+	}
+
+	public String next() throws IOException
+	{
+	    while (st == null || !st.hasMoreTokens())
+		st = new StringTokenizer(br.readLine());
+	    return st.nextToken();
+	}
+
+	public int nextInt() throws IOException
+	{
+	    return Integer.parseInt(next());
+	}
+
+	public long nextLong() throws IOException
+	{
+	    return Long.parseLong(next());
+	}
+
+	public String nextLine() throws IOException
+	{
+	    return br.readLine();
+	}
+
+	public boolean ready() throws IOException
+	{
+	    return br.ready();
+	}
+    }
+}
