@@ -10,77 +10,69 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Combinations369 {
-    static long[][] comb;			//may need BigInteger, if the numbers are large, use a treemap
+	static long[][] comb;
 
-    static long nCr1(int n , int k)
-    {
-	if(n < k)
-	    return 0;
-	if(k == 0 || k == n)
-	    return 1;
-	if(comb[n][k] != -1)
-	    return comb[n][k];
-	if(n - k < k)
-	    return comb[n][k] = nCr1(n, n - k);
-	return comb[n][k] = nCr1(n - 1, k - 1) + nCr1(n - 1, k);
-    }
-    public static void main(String[] args) throws Exception
-    {
-	Scanner bf = new Scanner(System.in);
-	PrintWriter out = new PrintWriter(System.out);
-	comb = new long[101][101];
-	for(long [] i:comb)
-	    Arrays.fill(i, -1);
-	while(true){
-	    int n = bf.nextInt(), m = bf.nextInt();
-	    if(n + m == 0)
-		break;
-	    StringBuilder sb = new StringBuilder(""+n).append(" things taken ").append(m).append(" at a time is ");
-	    out.println(sb.append(nCr1(n, m)).append(" exactly."));
-	}
-	out.flush();
-	out.close();
-    }
-
-    static class Scanner {
-	StringTokenizer st;
-	BufferedReader br;
-
-	public Scanner(InputStream s)
-	{
-	    br = new BufferedReader(new InputStreamReader(s));
+	static long nCr1(int n, int k) {
+		if (n < k)
+			return 0;
+		if (k == 0 || k == n)
+			return 1;
+		if (comb[n][k] != -1)
+			return comb[n][k];
+		if (n - k < k)
+			return comb[n][k] = nCr1(n, n - k);
+		return comb[n][k] = nCr1(n - 1, k - 1) + nCr1(n - 1, k);
 	}
 
-	public Scanner(FileReader fileReader)
-	{
-	    br = new BufferedReader(fileReader);
+	public static void main(String[] args) throws Exception {
+		Scanner bf = new Scanner(System.in);
+		PrintWriter out = new PrintWriter(System.out);
+		comb = new long[101][101];
+		for (long[] i : comb)
+			Arrays.fill(i, -1);
+		while (true) {
+			int n = bf.nextInt(), m = bf.nextInt();
+			if (n + m == 0)
+				break;
+			StringBuilder sb = new StringBuilder("" + n).append(" things taken ").append(m).append(" at a time is ");
+			out.println(sb.append(nCr1(n, m)).append(" exactly."));
+		}
+		out.flush();
+		out.close();
 	}
 
-	public String next() throws IOException
-	{
-	    while (st == null || !st.hasMoreTokens())
-		st = new StringTokenizer(br.readLine());
-	    return st.nextToken();
-	}
+	static class Scanner {
+		StringTokenizer st;
+		BufferedReader br;
 
-	public int nextInt() throws IOException
-	{
-	    return Integer.parseInt(next());
-	}
+		public Scanner(InputStream s) {
+			br = new BufferedReader(new InputStreamReader(s));
+		}
 
-	public long nextLong() throws IOException
-	{
-	    return Long.parseLong(next());
-	}
+		public Scanner(FileReader fileReader) {
+			br = new BufferedReader(fileReader);
+		}
 
-	public String nextLine() throws IOException
-	{
-	    return br.readLine();
-	}
+		public String next() throws IOException {
+			while (st == null || !st.hasMoreTokens())
+				st = new StringTokenizer(br.readLine());
+			return st.nextToken();
+		}
 
-	public boolean ready() throws IOException
-	{
-	    return br.ready();
+		public int nextInt() throws IOException {
+			return Integer.parseInt(next());
+		}
+
+		public long nextLong() throws IOException {
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException {
+			return br.readLine();
+		}
+
+		public boolean ready() throws IOException {
+			return br.ready();
+		}
 	}
-    }
 }

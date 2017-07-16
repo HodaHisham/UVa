@@ -10,93 +10,91 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class IrreducableBasicFractions10179 {
-    static ArrayList<Integer> primes;
-    static int[] isComposite;
+	static ArrayList<Integer> primes;
+	static int[] isComposite;
 
-    static void sieve(int N)	// O(N log log N) 
-    {
-	isComposite = new int[N+1];					
-	isComposite[0] = isComposite[1] = 1;			// 0 indicates a prime number
-	primes = new ArrayList<Integer>();
-
-	for (int i = 2; i <= N; ++i) 					//can loop till i*i <= N if primes array is not needed O(N log log sqrt(N)) 
-	    if (isComposite[i] == 0) 					//can loop in 2 and odd integers for slightly better performance
-	    {
-		primes.add(i);
-		if(1l * i * i <= N)
-		    for (int j = i * i; j <= N; j += i)	// j = i * 2 will not affect performance too much, may alter in modified sieve
-			isComposite[j] = 1;
-	    }   
-    }
-    static int phi(int N)
-    {
-	int ans = N, idx = 0, p = primes.get(0);
-	while(p * p <= N)
+	static void sieve(int N) // O(N log log N)
 	{
-	    if(N % p == 0)
-		ans -= ans / p;
-	    while(N % p == 0)
-		N /= p;
-	    p = primes.get(++idx);
+		isComposite = new int[N + 1];
+		isComposite[0] = isComposite[1] = 1; // 0 indicates a prime number
+		primes = new ArrayList<Integer>();
+
+		for (int i = 2; i <= N; ++i) // can loop till i*i <= N if primes array
+										// is not needed O(N log log sqrt(N))
+			if (isComposite[i] == 0) // can loop in 2 and odd integers for
+										// slightly better performance
+			{
+				primes.add(i);
+				if (1l * i * i <= N)
+					for (int j = i * i; j <= N; j += i) // j = i * 2 will not
+														// affect performance
+														// too much, may alter
+														// in modified sieve
+						isComposite[j] = 1;
+			}
 	}
 
-	if(N != 1) 
-	    ans -= ans / N;
-	return ans;
-    }
-    public static void main(String[] args) throws Exception
-    {
-	Scanner bf = new Scanner(System.in);
-	PrintWriter out = new PrintWriter(System.out);
-	sieve((int)1e6);
-	while(true){
-	    int n = bf.nextInt();
-	    if(n == 0) break;
-	    out.println(phi(n));
-	}
-	out.flush();
-	out.close();
-    }
+	static int phi(int N) {
+		int ans = N, idx = 0, p = primes.get(0);
+		while (p * p <= N) {
+			if (N % p == 0)
+				ans -= ans / p;
+			while (N % p == 0)
+				N /= p;
+			p = primes.get(++idx);
+		}
 
-    static class Scanner {
-	StringTokenizer st;
-	BufferedReader br;
-
-	public Scanner(InputStream s)
-	{
-	    br = new BufferedReader(new InputStreamReader(s));
+		if (N != 1)
+			ans -= ans / N;
+		return ans;
 	}
 
-	public Scanner(FileReader fileReader)
-	{
-	    br = new BufferedReader(fileReader);
+	public static void main(String[] args) throws Exception {
+		Scanner bf = new Scanner(System.in);
+		PrintWriter out = new PrintWriter(System.out);
+		sieve((int) 1e6);
+		while (true) {
+			int n = bf.nextInt();
+			if (n == 0)
+				break;
+			out.println(phi(n));
+		}
+		out.flush();
+		out.close();
 	}
 
-	public String next() throws IOException
-	{
-	    while (st == null || !st.hasMoreTokens())
-		st = new StringTokenizer(br.readLine());
-	    return st.nextToken();
-	}
+	static class Scanner {
+		StringTokenizer st;
+		BufferedReader br;
 
-	public int nextInt() throws IOException
-	{
-	    return Integer.parseInt(next());
-	}
+		public Scanner(InputStream s) {
+			br = new BufferedReader(new InputStreamReader(s));
+		}
 
-	public long nextLong() throws IOException
-	{
-	    return Long.parseLong(next());
-	}
+		public Scanner(FileReader fileReader) {
+			br = new BufferedReader(fileReader);
+		}
 
-	public String nextLine() throws IOException
-	{
-	    return br.readLine();
-	}
+		public String next() throws IOException {
+			while (st == null || !st.hasMoreTokens())
+				st = new StringTokenizer(br.readLine());
+			return st.nextToken();
+		}
 
-	public boolean ready() throws IOException
-	{
-	    return br.ready();
+		public int nextInt() throws IOException {
+			return Integer.parseInt(next());
+		}
+
+		public long nextLong() throws IOException {
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException {
+			return br.readLine();
+		}
+
+		public boolean ready() throws IOException {
+			return br.ready();
+		}
 	}
-    }
 }

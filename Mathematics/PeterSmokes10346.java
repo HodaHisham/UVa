@@ -10,65 +10,55 @@ import java.util.StringTokenizer;
 
 public class PeterSmokes10346 {
 
-
-    public static void main(String[] args) throws Exception
-    {
-	Scanner bf = new Scanner(System.in);
-	PrintWriter out = new PrintWriter(System.out);
-	while(bf.ready()){
-	    int n = bf.nextInt(), k = bf.nextInt();
-	    int ans = n+n/k;
-	    n=n%k+n/k;
-	    while(n >= k){
-		ans+= n/k;
-		n=n%k+n/k;
-
-	    }
-	    out.println(ans);
-	}
-	out.flush();
-	out.close();
-    }
-
-    static class Scanner {
-	StringTokenizer st;
-	BufferedReader br;
-
-	public Scanner(InputStream s)
-	{
-	    br = new BufferedReader(new InputStreamReader(s));
+	public static void main(String[] args) throws Exception {
+		Scanner bf = new Scanner(System.in);
+		PrintWriter out = new PrintWriter(System.out);
+		while (bf.ready()) {
+			int n = bf.nextInt(), k = bf.nextInt();
+			int ans = n + n / k;
+			n = n % k + n / k;
+			while (n >= k) {
+				ans += n / k;
+				n = n % k + n / k;
+			}
+			out.println(ans);
+		}
+		out.flush();
+		out.close();
 	}
 
-	public Scanner(FileReader fileReader)
-	{
-	    br = new BufferedReader(fileReader);
-	}
+	static class Scanner {
+		StringTokenizer st;
+		BufferedReader br;
 
-	public String next() throws IOException
-	{
-	    while (st == null || !st.hasMoreTokens())
-		st = new StringTokenizer(br.readLine());
-	    return st.nextToken();
-	}
+		public Scanner(InputStream s) {
+			br = new BufferedReader(new InputStreamReader(s));
+		}
 
-	public int nextInt() throws IOException
-	{
-	    return Integer.parseInt(next());
-	}
+		public Scanner(FileReader fileReader) {
+			br = new BufferedReader(fileReader);
+		}
 
-	public long nextLong() throws IOException
-	{
-	    return Long.parseLong(next());
-	}
+		public String next() throws IOException {
+			while (st == null || !st.hasMoreTokens())
+				st = new StringTokenizer(br.readLine());
+			return st.nextToken();
+		}
 
-	public String nextLine() throws IOException
-	{
-	    return br.readLine();
-	}
+		public int nextInt() throws IOException {
+			return Integer.parseInt(next());
+		}
 
-	public boolean ready() throws IOException
-	{
-	    return br.ready();
+		public long nextLong() throws IOException {
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException {
+			return br.readLine();
+		}
+
+		public boolean ready() throws IOException {
+			return br.ready();
+		}
 	}
-    }
 }

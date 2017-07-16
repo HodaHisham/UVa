@@ -10,62 +10,62 @@ import java.util.StringTokenizer;
 
 public class NumberingRoads11723 {
 
-    public static void main(String[] args) throws Exception
-    {
-	Scanner bf = new Scanner(System.in);
-	PrintWriter out = new PrintWriter(System.out);
-	int TC = 1;
-	while(bf.ready()){
-	    //	while(true){
-	    int r = bf.nextInt(), n = bf.nextInt();
-	    if(n == 0 && r == 0)
-		break;
-	    int tmp = r/n+(r%n == 0?-1:0);
-	    out.println("Case "+TC+++": "+(tmp <= 26?tmp:"impossible"));
-	}
-	out.flush();
-	out.close();
-    }
-
-    static class Scanner {
-	StringTokenizer st;
-	BufferedReader br;
-
-	public Scanner(InputStream s)
+	public static void main(String[] args) throws Exception
 	{
-	    br = new BufferedReader(new InputStreamReader(s));
+		Scanner bf = new Scanner(System.in);
+		PrintWriter out = new PrintWriter(System.out);
+		int TC = 1;
+		while(bf.ready()){
+			//	while(true){
+			int r = bf.nextInt(), n = bf.nextInt();
+			if(n == 0 && r == 0)
+				break;
+			int tmp = r/n+(r%n == 0?-1:0);
+			out.println("Case "+TC+++": "+(tmp <= 26?tmp:"impossible"));
+		}
+		out.flush();
+		out.close();
 	}
 
-	public Scanner(FileReader fileReader)
-	{
-	    br = new BufferedReader(fileReader);
-	}
+	static class Scanner {
+		StringTokenizer st;
+		BufferedReader br;
 
-	public String next() throws IOException
-	{
-	    while (st == null || !st.hasMoreTokens())
-		st = new StringTokenizer(br.readLine());
-	    return st.nextToken();
-	}
+		public Scanner(InputStream s)
+		{
+			br = new BufferedReader(new InputStreamReader(s));
+		}
 
-	public int nextInt() throws IOException
-	{
-	    return Integer.parseInt(next());
-	}
+		public Scanner(FileReader fileReader)
+		{
+			br = new BufferedReader(fileReader);
+		}
 
-	public long nextLong() throws IOException
-	{
-	    return Long.parseLong(next());
-	}
+		public String next() throws IOException
+		{
+			while (st == null || !st.hasMoreTokens())
+				st = new StringTokenizer(br.readLine());
+			return st.nextToken();
+		}
 
-	public String nextLine() throws IOException
-	{
-	    return br.readLine();
-	}
+		public int nextInt() throws IOException
+		{
+			return Integer.parseInt(next());
+		}
 
-	public boolean ready() throws IOException
-	{
-	    return br.ready();
+		public long nextLong() throws IOException
+		{
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException
+		{
+			return br.readLine();
+		}
+
+		public boolean ready() throws IOException
+		{
+			return br.ready();
+		}
 	}
-    }
 }

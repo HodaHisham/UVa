@@ -9,105 +9,89 @@ import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.util.StringTokenizer;
 
-
 public class HowManyTrees10303 {
-    
-    
-    public static void main(String[] args) throws Exception
-    {
-	Scanner bf = new Scanner(System.in);
-	PrintWriter out = new PrintWriter(System.out);
-	BigInteger [] cat = new BigInteger[1001];
-	cat[0] = BigInteger.ONE;
-	for (int i = 1; i < cat.length; i++)
-	{
-	    cat[i] = cat[i-1].multiply(BigInteger.valueOf(4*i-2)).divide(BigInteger.valueOf(i+1));
-	}
-	while(bf.ready()){
-	    int n = bf.nextInt();
-            out.println(cat[n]);
-	}
-	out.flush();
-	out.close();
-    }
 
-    static class Scanner {
-	StringTokenizer st;
-	BufferedReader br;
-
-	public Scanner(InputStream s)
-	{
-	    br = new BufferedReader(new InputStreamReader(s));
-	}
-
-	public Scanner(FileReader fileReader)
-	{
-	    br = new BufferedReader(fileReader);
-	}
-
-	public String next() throws IOException
-	{
-	    while (st == null || !st.hasMoreTokens())
-		st = new StringTokenizer(br.readLine());
-	    return st.nextToken();
-	}
-
-	public int nextInt() throws IOException
-	{
-	    return Integer.parseInt(next());
-	}
-
-	public double nextDouble() throws IOException
-	{
-	    String x = next();
-	    StringBuilder sb = new StringBuilder("0");
-	    double res = 0, f = 1;
-	    boolean dec = false, neg = false;
-	    int start = 0;
-	    if (x.charAt(0) == '-')
-	    {
-		neg = true;
-		start++;
-	    }
-	    for (int i = start; i < x.length(); i++)
-		if (x.charAt(i) == '.')
-		{
-		    res = Long.parseLong(sb.toString());
-		    sb = new StringBuilder("0");
-		    dec = true;
-		} else
-		{
-		    sb.append(x.charAt(i));
-		    if (dec)
-			f *= 10;
+	public static void main(String[] args) throws Exception {
+		Scanner bf = new Scanner(System.in);
+		PrintWriter out = new PrintWriter(System.out);
+		BigInteger[] cat = new BigInteger[1001];
+		cat[0] = BigInteger.ONE;
+		for (int i = 1; i < cat.length; i++) {
+			cat[i] = cat[i - 1].multiply(BigInteger.valueOf(4 * i - 2)).divide(BigInteger.valueOf(i + 1));
 		}
-	    res += Long.parseLong(sb.toString()) / f;
-	    return res * (neg ? -1 : 1);
+		while (bf.ready()) {
+			int n = bf.nextInt();
+			out.println(cat[n]);
+		}
+		out.flush();
+		out.close();
 	}
 
-	public boolean nxtEmpty() throws IOException
-	{
-	    String line = br.readLine();
-	    if (line.isEmpty())
-		return true;
-	    st = new StringTokenizer(line);
-	    return false;
-	}
+	static class Scanner {
+		StringTokenizer st;
+		BufferedReader br;
 
-	public long nextLong() throws IOException
-	{
-	    return Long.parseLong(next());
-	}
+		public Scanner(InputStream s) {
+			br = new BufferedReader(new InputStreamReader(s));
+		}
 
-	public String nextLine() throws IOException
-	{
-	    return br.readLine();
-	}
+		public Scanner(FileReader fileReader) {
+			br = new BufferedReader(fileReader);
+		}
 
-	public boolean ready() throws IOException
-	{
-	    return br.ready();
-	}
+		public String next() throws IOException {
+			while (st == null || !st.hasMoreTokens())
+				st = new StringTokenizer(br.readLine());
+			return st.nextToken();
+		}
 
-    }
+		public int nextInt() throws IOException {
+			return Integer.parseInt(next());
+		}
+
+		public double nextDouble() throws IOException {
+			String x = next();
+			StringBuilder sb = new StringBuilder("0");
+			double res = 0, f = 1;
+			boolean dec = false, neg = false;
+			int start = 0;
+			if (x.charAt(0) == '-') {
+				neg = true;
+				start++;
+			}
+			for (int i = start; i < x.length(); i++)
+				if (x.charAt(i) == '.') {
+					res = Long.parseLong(sb.toString());
+					sb = new StringBuilder("0");
+					dec = true;
+				} else {
+					sb.append(x.charAt(i));
+					if (dec)
+						f *= 10;
+				}
+			res += Long.parseLong(sb.toString()) / f;
+			return res * (neg ? -1 : 1);
+		}
+
+		public boolean nxtEmpty() throws IOException {
+			String line = br.readLine();
+			if (line.isEmpty())
+				return true;
+			st = new StringTokenizer(line);
+			return false;
+		}
+
+		public long nextLong() throws IOException {
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException {
+			return br.readLine();
+		}
+
+		public boolean ready() throws IOException {
+			return br.ready();
+		}
+
+	}
 }

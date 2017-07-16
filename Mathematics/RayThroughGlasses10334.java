@@ -10,79 +10,69 @@ import java.math.BigInteger;
 import java.util.StringTokenizer;
 
 public class RayThroughGlasses10334 {
-    static BigInteger fib[];
+	static BigInteger fib[];
 
-    static BigInteger fibonacci(int n) 		//O(log n)
-    {
-	if (n == 0)
-	    return fib[n] = BigInteger.ZERO;
-	if (n <= 2)
-	    return fib[n] = BigInteger.ONE;
-	if (fib[n] != null)
-	    return fib[n];
-
-	int k = n >> 1;
-	BigInteger a = fibonacci(k), b = fibonacci(k+1);
-
-	if (n%2 == 0)
-	    return fib[n] = a.multiply(b.multiply(BigInteger.valueOf(2)).subtract(a));
-	return  fib[n] = b.multiply(b).add(a.multiply(a));
-    }	
-
-
-    public static void main(String[] args) throws Exception
-    {
-	Scanner bf = new Scanner(System.in);
-	PrintWriter out = new PrintWriter(System.out);
-	fib = new BigInteger[1005];
-	while(bf.ready())
+	static BigInteger fibonacci(int n) // O(log n)
 	{
-	    out.println(fibonacci(bf.nextInt()+2));
-	    //System.out.println(fib[50]);
-	}
-	out.flush();
-	out.close();
-    }
+		if (n == 0)
+			return fib[n] = BigInteger.ZERO;
+		if (n <= 2)
+			return fib[n] = BigInteger.ONE;
+		if (fib[n] != null)
+			return fib[n];
 
-    static class Scanner {
-	StringTokenizer st;
-	BufferedReader br;
+		int k = n >> 1;
+		BigInteger a = fibonacci(k), b = fibonacci(k + 1);
 
-	public Scanner(InputStream s)
-	{
-	    br = new BufferedReader(new InputStreamReader(s));
+		if (n % 2 == 0)
+			return fib[n] = a.multiply(b.multiply(BigInteger.valueOf(2)).subtract(a));
+		return fib[n] = b.multiply(b).add(a.multiply(a));
 	}
 
-	public Scanner(FileReader fileReader)
-	{
-	    br = new BufferedReader(fileReader);
+	public static void main(String[] args) throws Exception {
+		Scanner bf = new Scanner(System.in);
+		PrintWriter out = new PrintWriter(System.out);
+		fib = new BigInteger[1005];
+		while (bf.ready()) {
+			out.println(fibonacci(bf.nextInt() + 2));
+			// System.out.println(fib[50]);
+		}
+		out.flush();
+		out.close();
 	}
 
-	public String next() throws IOException
-	{
-	    while (st == null || !st.hasMoreTokens())
-		st = new StringTokenizer(br.readLine());
-	    return st.nextToken();
-	}
+	static class Scanner {
+		StringTokenizer st;
+		BufferedReader br;
 
-	public int nextInt() throws IOException
-	{
-	    return Integer.parseInt(next());
-	}
+		public Scanner(InputStream s) {
+			br = new BufferedReader(new InputStreamReader(s));
+		}
 
-	public long nextLong() throws IOException
-	{
-	    return Long.parseLong(next());
-	}
+		public Scanner(FileReader fileReader) {
+			br = new BufferedReader(fileReader);
+		}
 
-	public String nextLine() throws IOException
-	{
-	    return br.readLine();
-	}
+		public String next() throws IOException {
+			while (st == null || !st.hasMoreTokens())
+				st = new StringTokenizer(br.readLine());
+			return st.nextToken();
+		}
 
-	public boolean ready() throws IOException
-	{
-	    return br.ready();
+		public int nextInt() throws IOException {
+			return Integer.parseInt(next());
+		}
+
+		public long nextLong() throws IOException {
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException {
+			return br.readLine();
+		}
+
+		public boolean ready() throws IOException {
+			return br.ready();
+		}
 	}
-    }
 }

@@ -10,68 +10,58 @@ import java.util.StringTokenizer;
 
 public class AMultiplicationGame847 {
 
-
-    public static void main(String[] args) throws Exception
-    {
-//	Scanner bf = new Scanner(System.in);
-	Scanner bf = new Scanner(new FileReader("A.txt"));
-	PrintWriter out = new PrintWriter(System.out);
-	StringBuilder sb = new StringBuilder();
-	while(bf.ready()){
-	    long n = bf.nextLong(), tmp = 1;
-	    int i = 1;
-	    while(true){
-		if(tmp >= n)
-		    break;
-		i = (i+1)%2;
-		tmp *= i == 0?9:2;
-	    }
-	    out.println(i == 0?"Stan wins.":"Ollie wins.");
-	}
-	out.print(sb);
-	out.flush();
-	out.close();
-    }
-
-    static class Scanner {
-	StringTokenizer st;
-	BufferedReader br;
-
-	public Scanner(InputStream s)
-	{
-	    br = new BufferedReader(new InputStreamReader(s));
+	public static void main(String[] args) throws Exception {
+		Scanner bf = new Scanner(System.in);
+		PrintWriter out = new PrintWriter(System.out);
+		StringBuilder sb = new StringBuilder();
+		while (bf.ready()) {
+			long n = bf.nextLong(), tmp = 1;
+			int i = 1;
+			while (true) {
+				if (tmp >= n)
+					break;
+				i = (i + 1) % 2;
+				tmp *= i == 0 ? 9 : 2;
+			}
+			out.println(i == 0 ? "Stan wins." : "Ollie wins.");
+		}
+		out.print(sb);
+		out.flush();
+		out.close();
 	}
 
-	public Scanner(FileReader fileReader)
-	{
-	    br = new BufferedReader(fileReader);
-	}
+	static class Scanner {
+		StringTokenizer st;
+		BufferedReader br;
 
-	public String next() throws IOException
-	{
-	    while (st == null || !st.hasMoreTokens())
-		st = new StringTokenizer(br.readLine());
-	    return st.nextToken();
-	}
+		public Scanner(InputStream s) {
+			br = new BufferedReader(new InputStreamReader(s));
+		}
 
-	public int nextInt() throws IOException
-	{
-	    return Integer.parseInt(next());
-	}
+		public Scanner(FileReader fileReader) {
+			br = new BufferedReader(fileReader);
+		}
 
-	public long nextLong() throws IOException
-	{
-	    return Long.parseLong(next());
-	}
+		public String next() throws IOException {
+			while (st == null || !st.hasMoreTokens())
+				st = new StringTokenizer(br.readLine());
+			return st.nextToken();
+		}
 
-	public String nextLine() throws IOException
-	{
-	    return br.readLine();
-	}
+		public int nextInt() throws IOException {
+			return Integer.parseInt(next());
+		}
 
-	public boolean ready() throws IOException
-	{
-	    return br.ready();
+		public long nextLong() throws IOException {
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException {
+			return br.readLine();
+		}
+
+		public boolean ready() throws IOException {
+			return br.ready();
+		}
 	}
-    }
 }

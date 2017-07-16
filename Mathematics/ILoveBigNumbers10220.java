@@ -11,69 +11,58 @@ import java.util.StringTokenizer;
 
 public class ILoveBigNumbers10220 {
 
-
-    public static void main(String[] args) throws Exception
-    {
-	Scanner bf = new Scanner(System.in);
-	PrintWriter out = new PrintWriter(System.out);
-	int [] dig = new int[1001];
-	BigInteger last = BigInteger.ONE;
-	dig[0] = 1;
-	for (int i = 1; i < dig.length; i++)
-	{
-	    char[] s = BigInteger.valueOf(i).multiply(last).toString().toCharArray();
-	    for (int j = s.length-1; j >= 0; j--) dig[i] += s[j]-'0';
-	    last = new BigInteger(new String(s));
-	}
-	while(bf.ready()){
-	    //	while(true){
-	    int n = bf.nextInt();
-	    //	    if(n == -1) break;
-	    out.println(dig[n]);
-	}
-	out.flush();
-	out.close();
-    }
-
-    static class Scanner {
-	StringTokenizer st;
-	BufferedReader br;
-
-	public Scanner(InputStream s)
-	{
-	    br = new BufferedReader(new InputStreamReader(s));
+	public static void main(String[] args) throws Exception {
+		Scanner bf = new Scanner(System.in);
+		PrintWriter out = new PrintWriter(System.out);
+		int[] dig = new int[1001];
+		BigInteger last = BigInteger.ONE;
+		dig[0] = 1;
+		for (int i = 1; i < dig.length; i++) {
+			char[] s = BigInteger.valueOf(i).multiply(last).toString().toCharArray();
+			for (int j = s.length - 1; j >= 0; j--)
+				dig[i] += s[j] - '0';
+			last = new BigInteger(new String(s));
+		}
+		while (bf.ready()) {
+			int n = bf.nextInt();
+			out.println(dig[n]);
+		}
+		out.flush();
+		out.close();
 	}
 
-	public Scanner(FileReader fileReader)
-	{
-	    br = new BufferedReader(fileReader);
-	}
+	static class Scanner {
+		StringTokenizer st;
+		BufferedReader br;
 
-	public String next() throws IOException
-	{
-	    while (st == null || !st.hasMoreTokens())
-		st = new StringTokenizer(br.readLine());
-	    return st.nextToken();
-	}
+		public Scanner(InputStream s) {
+			br = new BufferedReader(new InputStreamReader(s));
+		}
 
-	public int nextInt() throws IOException
-	{
-	    return Integer.parseInt(next());
-	}
+		public Scanner(FileReader fileReader) {
+			br = new BufferedReader(fileReader);
+		}
 
-	public long nextLong() throws IOException
-	{
-	    return Long.parseLong(next());
-	}
+		public String next() throws IOException {
+			while (st == null || !st.hasMoreTokens())
+				st = new StringTokenizer(br.readLine());
+			return st.nextToken();
+		}
 
-	public String nextLine() throws IOException
-	{
-	    return br.readLine();
-	}
+		public int nextInt() throws IOException {
+			return Integer.parseInt(next());
+		}
 
-	public boolean ready() throws IOException
-	{
-	    return br.ready();
+		public long nextLong() throws IOException {
+			return Long.parseLong(next());
+		}
+
+		public String nextLine() throws IOException {
+			return br.readLine();
+		}
+
+		public boolean ready() throws IOException {
+			return br.ready();
+		}
 	}
-    }
 }

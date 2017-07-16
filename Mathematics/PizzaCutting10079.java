@@ -9,29 +9,24 @@ import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
 public class PizzaCutting10079 {
-	public static void main(String[] args) throws Exception
-	{
+	public static void main(String[] args) throws Exception {
 		Scanner bf = new Scanner(System.in);
 		PrintWriter out = new PrintWriter(System.out);
 		long[] a = new long[1000000];
 		a[0] = 1;
-		for (int i = 1; i < a.length; i++)
-		{
+		for (int i = 1; i < a.length; i++) {
 			a[i] = a[i - 1] + i;
 		}
-		while (true)
-		{
+		while (true) {
 			int n = bf.nextInt();
 			if (n < 0)
 				break;
 			long ans = a[999999];
-			if (n >= 1000000)
-			{
+			if (n >= 1000000) {
 				for (int i = 1000000; i <= n; i++)
 					ans += i;
 
-			} else
-			{
+			} else {
 				ans = a[n];
 			}
 			out.println(ans);
@@ -44,48 +39,40 @@ public class PizzaCutting10079 {
 		StringTokenizer st;
 		BufferedReader br;
 
-		public Scanner(InputStream s)
-		{
+		public Scanner(InputStream s) {
 			br = new BufferedReader(new InputStreamReader(s));
 		}
 
-		public Scanner(FileReader fileReader)
-		{
+		public Scanner(FileReader fileReader) {
 			br = new BufferedReader(fileReader);
 		}
 
-		public String next() throws IOException
-		{
+		public String next() throws IOException {
 			while (st == null || !st.hasMoreTokens())
 				st = new StringTokenizer(br.readLine());
 			return st.nextToken();
 		}
 
-		public int nextInt() throws IOException
-		{
+		public int nextInt() throws IOException {
 			return Integer.parseInt(next());
 		}
 
-		public double nextDouble() throws IOException
-		{
+		public double nextDouble() throws IOException {
 			String x = next();
 			StringBuilder sb = new StringBuilder("0");
 			double res = 0, f = 1;
 			boolean dec = false, neg = false;
 			int start = 0;
-			if (x.charAt(0) == '-')
-			{
+			if (x.charAt(0) == '-') {
 				neg = true;
 				start++;
 			}
 			for (int i = start; i < x.length(); i++)
-				if (x.charAt(i) == '.')
-				{
+				if (x.charAt(i) == '.') {
 					res = Long.parseLong(sb.toString());
 					sb = new StringBuilder("0");
 					dec = true;
-				} else
-				{
+				} else {
 					sb.append(x.charAt(i));
 					if (dec)
 						f *= 10;
@@ -94,8 +81,7 @@ public class PizzaCutting10079 {
 			return res * (neg ? -1 : 1);
 		}
 
-		public boolean nxtEmpty() throws IOException
-		{
+		public boolean nxtEmpty() throws IOException {
 			String line = br.readLine();
 			if (line.isEmpty())
 				return true;
@@ -103,18 +89,15 @@ public class PizzaCutting10079 {
 			return false;
 		}
 
-		public long nextLong() throws IOException
-		{
+		public long nextLong() throws IOException {
 			return Long.parseLong(next());
 		}
 
-		public String nextLine() throws IOException
-		{
+		public String nextLine() throws IOException {
 			return br.readLine();
 		}
 
-		public boolean ready() throws IOException
-		{
+		public boolean ready() throws IOException {
 			return br.ready();
 		}
 
